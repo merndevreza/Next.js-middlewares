@@ -14,12 +14,14 @@ export function middleware(request) {
   //example-3
   // if (request.url.includes("api"))  return NextResponse.redirect(new URL('/', request.url))
   // return NextResponse.next()
+
+  //example-4
   return NextResponse.rewrite(new URL('/', request.url))
 }
 
-// See "Matching Paths" below to learn more
+// "Matching Paths"
 export const config = {
   matcher: ['/api', "/about"]
 }
 
-// Here, this config function is next js utility function for middleware. 
+// Here, this config function is a next js utility function for middleware. 
